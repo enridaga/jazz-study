@@ -1,0 +1,37 @@
+# Local backups (history is in git)
+backup/
+
+# LaTeX build artefacts
+*.aux
+*.log
+*.toc
+*.out
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.idx
+*.ilg
+*.ind
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+_minted*/
+
+# Generated PDF (rebuild with ./make.sh)
+main.pdf
+
+# Editors / OS
+.DS_Store
+*~
+*.swp
+.vscode/
+.idea/

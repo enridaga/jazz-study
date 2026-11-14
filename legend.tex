@@ -1,0 +1,70 @@
+\chapter*{Notation}
+\addcontentsline{toc}{chapter}{Notation}
+
+All numbers are relative to the \textbf{key} of the tune: 1 is the tonic.
+The same tune can be studied in any key; the \textbf{Keys} line lists the
+keys commonly used (original key first).
+
+\section*{Melody}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{p{2.4cm}p{2.8cm}p{6cm}}
+\textbf{Symbol} & \textbf{Example} & \textbf{Meaning} \\ \hline
+\mel{1 \ldots 7} & \mel{1\;2\;3} & Scale degrees of the key (in F: F G A). \\
+\mel{\flat n}, \mel{\sharp n} & \mel{\flat3\;\sharp4} & Altered degrees (in F: A$\flat$, B$\natural$). \\
+\mel{\hi{n}} & \mel{\hi{1}} & Dot above: one octave higher. \\
+\mel{\lo{n}} & \mel{\lo{7}} & Dot below: one octave lower. \\
+\mel{n} (no dot) & \mel{5} & Middle (reference) octave. \\
+\tg{n} & \mel{\tg{3}} & Circled: target / landing note (e.g.\ guide tone). \\
+\mel{-} & \mel{3\;-} & Previous note held. \\
+\end{tabular}
+
+\section*{Chords}
+\begin{tabular}{p{2.4cm}p{2.8cm}p{6cm}}
+\textbf{Symbol} & \textbf{Example (F)} & \textbf{Meaning} \\ \hline
+Roman numeral & \ch{IV}{\Delta7} & Chord built on that degree of the key (here B$\flat$). \\
+\ch{\flat VII}{7} & E$\flat$7 & Chord on an altered degree. \\
+\ch{}{\Delta7} & \ch{I}{\Delta7} = F$\Delta$7 & Major seventh. \\
+\ch{}{-7} & \ch{ii}{-7} = G$-$7 & Minor seventh. \\
+\ch{}{7} & \ch{V}{7} = C7 & Dominant seventh. \\
+\ch{}{\text{\o}7} & \ch{vii}{\text{\o}7} = E\o7 & Half-diminished (m7$\flat$5). \\
+\ch{}{\circ7} & \ch{\sharp i}{\circ7} = F$\sharp^{\circ}$7 & Diminished seventh. \\
+\end{tabular}
+
+\medskip
+Upper case numerals for major and dominant chords, lower case for minor,
+half-diminished and diminished chords.
+
+\section*{Chord functions of melody notes}
+\begin{tabular}{p{2.4cm}p{2.8cm}p{6cm}}
+\textbf{Symbol} & \textbf{Example} & \textbf{Meaning} \\ \hline
+\fn{R 3 5 7} & \fn{R $\flat$3 5 $\flat$7} & Interval of each melody note above the
+\emph{chord} root (not the key). Extensions: \fn{9 11 13}, altered:
+\fn{$\flat$9 $\sharp$11 $\flat$13}. \\
+\end{tabular}
+
+\section*{Form grid}
+\begin{form}
+A & \ch{ii}{-7} & \ch{V}{7} & \ch{I}{\Delta7} & \ch{I}{\Delta7} \\
+  & \mel{2\;4\;6\;\tg{\hi{1}}} & \mel{5\;\tg{7}\;\hi{2}\;\hi{4}} & \mel{\tg{\hi{3}}} & \mel{-} \\
+  & \fn{R $\flat$3 5 $\flat$7} & \fn{R 3 5 $\flat$7} & \fn{3} & \\ \hline
+\end{form}
+
+\medskip
+\begin{itemize}
+\item Each cell is one bar; four bars per row.
+\item Left column: section label (A, B, \ldots).
+\item Rows: chords; melody (scale degrees); chord function of the melody notes.
+\end{itemize}
+
+\section*{Boxes}
+\begin{study}{Study box}
+What to study in a passage: patterns, guide tones, licks, exercises.
+\end{study}
+
+\begin{notes}
+General notes: history of the tune, composers, context, anecdotes.
+\end{notes}
+
+\begin{recordings}
+\rec{Artist}{Album}{year} -- recordings worth listening to and transcribing.
+\end{recordings}

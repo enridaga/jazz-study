@@ -1,0 +1,48 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{jazzmacros}
+\RequirePackage{amsmath,amssymb,array}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{tikz}
+
+% Chords: \ch{ii}{-7}  \ch{V}{7}  \ch{I}{\Delta7}
+\newcommand{\ch}[2]{$\mathrm{#1}^{#2}$}
+% Melody degrees: \mel{1\;2\;\flat3\;\hi{1}\;\lo{7}}
+\newcommand{\hi}[1]{\dot{#1}}
+\newcommand{\lo}[1]{\underset{\cdot}{#1}}
+\newcommand{\mel}[1]{$#1$}
+% Function of melody notes w.r.t. the current chord: \fn{R $\flat$3 5 $\flat$7}
+% Target / landing note (circled): \mel{2\;4\;6\;\tg{\hi{1}}}
+\newcommand{\tg}[1]{\tikz[baseline=(n.base)]
+  \node[circle,draw,inner sep=1pt](n){$#1$};}
+\newcommand{\fn}[1]{{\scriptsize\textit{#1}}}
+
+% Tune header
+% \tune{Title}{F (orig.), B$\flat$, E$\flat$}{AABA, 32 bars}
+\newcommand{\tune}[3]{\chapter{#1}\noindent
+  \textbf{Keys:} #2 \quad \textbf{Form:} #3\par\medskip}
+
+% Form grid: label + 4 bars per row
+\newenvironment{form}
+  {\renewcommand{\arraystretch}{1.6}%
+   \begin{tabular}{l|*{4}{p{2.3cm}|}}\hline}
+  {\end{tabular}}
+
+\newtcolorbox{study}[1]{colback=gray!5,colframe=gray!60,title={#1}}
+% General / historical notes: \begin{notes}...\end{notes}  (optional title)
+\newtcolorbox{notes}[1][Notes]{colback=blue!3,colframe=blue!40!black,
+  fonttitle=\bfseries,title={#1}}
+
+% Reference recordings:
+% \begin{recordings} \rec{Artist}{Album}{Year} ... \end{recordings}
+\newenvironment{recordings}
+  {\begin{tcolorbox}[colback=orange!4,colframe=orange!60!black,
+     fonttitle=\bfseries,title={Reference recordings}]
+   \begin{itemize}\setlength{\itemsep}{2pt}}
+  {\end{itemize}\end{tcolorbox}}
+\newcommand{\rec}[3]{\item \textbf{#1}, \emph{#2} (#3)}
+
+% Bibliographic sources inside boxes:
+% \sources{\src{Wikipedia}{https://...}; \src{...}{...}}
+\RequirePackage[hidelinks]{hyperref}
+\newcommand{\src}[2]{\href{#2}{#1}\footnote{\url{#2}}}
+\newcommand{\sources}[1]{\par\smallskip{\footnotesize\textit{Sources:} #1}}
