@@ -36,11 +36,12 @@
 \newcommand{\tfn}[1]{\textsuperscript{\color{chromatic}#1}}
 
 % Tune header
-% \tune{Title}{F (orig.), B$\flat$, E$\flat$}{AABA, 32 bars}
 \newcommand{\tunekeys}{}
 \newcounter{exercise}
-\newcommand{\tune}[3]{\chapter{#1}\renewcommand{\tunekeys}{#2}\setcounter{exercise}{0}%
-  \noindent\textbf{Keys:} #2 \quad \textbf{Form:} #3\par\medskip}
+% \tune{Title}{Authors}{First published}{Keys}{Form}
+\newcommand{\tune}[5]{\chapter{#1}\renewcommand{\tunekeys}{#4}\setcounter{exercise}{0}%
+  \noindent{\itshape #2 \textperiodcentered\ #3}\par\smallskip
+  \noindent\textbf{Keys:} #4 \quad \textbf{Form:} #5\par\medskip}
 
 % Tune folders: tunes/<name>/tune.tex includes its parts with \tunepart{file}
 \newif\ifformsonly   % \formsonlytrue in forms.tex: print only the forms

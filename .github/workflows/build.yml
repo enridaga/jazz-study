@@ -1,5 +1,5 @@
-# Build all PDFs on every push and publish them as a GitHub release ("latest"),
-# so that generated files are never committed to the repository.
+# Build all PDFs on every push; on main, publish them as a GitHub release ("latest")
+# and as a GitHub Pages website (site/). Generated files are never committed.
 name: Build PDFs
 
 on:
@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
@@ -52,3 +54,20 @@ jobs:
             --title "Latest build ($(git rev-list --count HEAD), ${GITHUB_SHA::7})" \
             --notes "PDFs and iReal Pro files built from ${GITHUB_SHA::7} on $(date -u +%Y-%m-%d)." \
             --prerelease --target "$GITHUB_SHA"
+
+      - name: Upload website (main branch only)
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+  deploy-pages:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

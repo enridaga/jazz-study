@@ -26,3 +26,6 @@ for t in tunes/*/tune.tex; do
       || { echo "Error building songs/$n.pdf (see songs/$n.log)"; exit 1; }
   done
 done
+
+# Static website for GitHub Pages: site/
+python3 tools/site.py > /dev/null || { echo "Error in tools/site.py"; exit 1; }
