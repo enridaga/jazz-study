@@ -1,5 +1,6 @@
 \chapter*{Notation}
 \addcontentsline{toc}{chapter}{Notation}
+\markboth{Notation}{Notation}
 
 All numbers are relative to the \textbf{key} of the tune: 1 is the tonic.
 The same tune can be studied in any key; the \textbf{Keys} line lists the
@@ -15,6 +16,7 @@ keys commonly used (original key first).
 \mel{\lo{n}} & \mel{\lo{7}} & Dot below: one octave lower. \\
 \mel{n} (no dot) & \mel{5} & Middle (reference) octave. \\
 \tg{n} & \mel{\tg{3}} & Circled: target / landing note (e.g.\ guide tone). \\
+\mel{\tg{n}}\tfn{f} & \mel{\tg{\hi{1}}}\tfn{$\sharp$9} & Circled note over a chromatic chord, with its function on that chord (in red). \\
 \mel{-} & \mel{3\;-} & Previous note held. \\
 \end{tabular}
 
@@ -28,6 +30,8 @@ Roman numeral & \ch{IV}{\Delta7} & Chord built on that degree of the key (here B
 \ch{}{7} & \ch{V}{7} = C7 & Dominant seventh. \\
 \ch{}{\text{\o}7} & \ch{vii}{\text{\o}7} = E\o7 & Half-diminished (m7$\flat$5). \\
 \ch{}{\circ7} & \ch{\sharp i}{\circ7} = F$\sharp^{\circ}$7 & Diminished seventh. \\
+\chx{VI}{7} & \chx{VI}{7} = G7 & Chord outside the key (secondary dominant, borrowed chord, \ldots), in red. \\
+\alt{\ch{VI}{7}} & \alt{\ch{V}{7}/\ch{ii}{}} & Alternative changes (secondary dominants, substitutions): smaller, grey, below the main changes. \\
 \end{tabular}
 
 \medskip
@@ -44,8 +48,9 @@ half-diminished and diminished chords.
 
 \section*{Form grid}
 \begin{form}
-A & \ch{ii}{-7} & \ch{V}{7} & \ch{I}{\Delta7} & \ch{I}{\Delta7} \\
-  & \mel{2\;4\;6\;\tg{\hi{1}}} & \mel{5\;\tg{7}\;\hi{2}\;\hi{4}} & \mel{\tg{\hi{3}}} & \mel{-} \\
+A & \mel{2\;4\;6\;\tg{\hi{1}}} & \mel{5\;\tg{7}\;\hi{2}\;\hi{4}} & \mel{\tg{\hi{3}}} & \mel{-} \\
+  & \ch{ii}{-7} & \ch{V}{7} & \ch{I}{\Delta7} & \ch{I}{\Delta7} \\
+  & & & & \alt{\ch{I}{\Delta7}\; \ch{VI}{7}} \\
   & \fn{R $\flat$3 5 $\flat$7} & \fn{R 3 5 $\flat$7} & \fn{3} & \\ \hline
 \end{form}
 
@@ -53,7 +58,7 @@ A & \ch{ii}{-7} & \ch{V}{7} & \ch{I}{\Delta7} & \ch{I}{\Delta7} \\
 \begin{itemize}
 \item Each cell is one bar; four bars per row.
 \item Left column: section label (A, B, \ldots).
-\item Rows: chords; melody (scale degrees); chord function of the melody notes.
+\item Rows: melody (scale degrees, top); chords (bold); alternative changes (grey, optional); chord function of the melody notes.
 \end{itemize}
 
 \section*{Boxes}
@@ -64,6 +69,11 @@ What to study in a passage: patterns, guide tones, licks, exercises.
 \begin{notes}
 General notes: history of the tune, composers, context, anecdotes.
 \end{notes}
+
+\begin{patternbox}{Name of the pattern}{chords it applies to}
+A short phrase for improvising, in scale degrees of the key of the target chord.
+Patterns are shared between tunes; each tune lists the bars where they apply.
+\end{patternbox}
 
 \begin{recordings}
 \rec{Artist}{Album}{year} -- recordings worth listening to and transcribing.

@@ -1,0 +1,54 @@
+# Build all PDFs on every push and publish them as a GitHub release ("latest"),
+# so that generated files are never committed to the repository.
+name: Build PDFs
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # full history: make.sh uses the commit count as version
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+            texlive-pictures texlive-fonts-recommended
+
+      - name: Build
+        run: bash make.sh
+
+      - name: Collect outputs
+        run: |
+          mkdir -p dist
+          cp main.pdf "dist/Jazz Study Book.pdf"
+          cp forms.pdf "dist/Jazz Study Book - Forms.pdf"
+          cp patternbook.pdf "dist/Jazz Study Book - Pattern Book.pdf"
+          cp songs/*.pdf dist/
+          cp ireal/*.html dist/
+
+      - name: Upload artifact (this commit)
+        uses: actions/upload-artifact@v4
+        with:
+          name: jazz-study-${{ github.sha }}
+          path: dist/
+
+      - name: Publish release "latest" (main branch only)
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest dist/* \
+            --title "Latest build ($(git rev-list --count HEAD), ${GITHUB_SHA::7})" \
+            --notes "PDFs and iReal Pro files built from ${GITHUB_SHA::7} on $(date -u +%Y-%m-%d)." \
+            --prerelease --target "$GITHUB_SHA"

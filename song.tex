@@ -1,0 +1,10 @@
+% Stand-alone PDF of one tune, with guitar tabs of its patterns and the notation legend.
+% Built by make.sh:  pdflatex -output-directory=songs -jobname=<name> "\def\tunename{<name>}\input{song}"
+\documentclass[11pt,openany]{book}
+\usepackage{amssymb}
+\usepackage{jazzmacros}
+\tabstrue
+\begin{document}
+\tuneinclude{\tunename}
+\include{legend}
+\end{document}
