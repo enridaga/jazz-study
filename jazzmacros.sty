@@ -5,6 +5,7 @@
 \RequirePackage{tikz}
 \RequirePackage[a4paper,top=1.8cm,bottom=2cm,left=2cm,right=2cm,headheight=14pt]{geometry}
 \RequirePackage{titlesec}
+\AtBeginDocument{\raggedbottom}% no vertical stretching when a page breaks early
 
 % Compact chapter heading, so the form fits on the tune's first page
 \titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{\thechapter}{0.6em}{}
@@ -30,7 +31,7 @@
 \newcommand{\fn}[1]{{\scriptsize\textit{#1}}}
 % Chords outside the key (secondary dominants, borrowed, etc.): \chx{III}{7}
 \definecolor{chromatic}{rgb}{0.65,0.1,0.1}
-\newcommand{\chx}[2]{{\color{chromatic}\ch{#1}{#2}}}
+\newcommand{\chx}[2]{\leavevmode{\color{chromatic}\ch{#1}{#2}}}
 % Function label of a circled melody note over a chromatic chord:
 % \mel{\tg{6}}\tfn{$\flat$7}
 \newcommand{\tfn}[1]{\textsuperscript{\color{chromatic}#1}}
