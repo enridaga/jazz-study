@@ -16,6 +16,7 @@
 % Struts: row heights inside the form grid (empty outside it)
 \newcommand{\chstrut}{}\newcommand{\melstrut}{}\newcommand{\altstrut}{}
 \newcommand{\ch}[2]{{\chsize\chstrut\mathversion{bold}$\mathrm{#1}^{#2}$}}
+\RequirePackage{etoolbox}\robustify{\ch}
 % Alternative (secondary) changes: smaller, grey, not bold
 % \alt{\ch{V}{7}/\ch{ii}{}\; \ch{ii}{-7}}
 \newcommand{\altch}[2]{$\mathrm{#1}^{#2}$}
@@ -73,9 +74,16 @@
     {{\footnotesize[tab not generated: run make.sh]}}\par\fi}
 \newcommand{\patternwhereline}{\ifx\patternwhere\empty\else
   \par\smallskip{\footnotesize\textit{In this tune:} \patternwhere}\fi}
+% In the pattern book (\patternbooktrue) the box has no "Pattern:" prefix, and each
+% pattern is a section in the contents, with a label for the alphabetical index.
+\newif\ifpatternbook
+\newcommand{\patterngroup}[1]{\chapter{#1}}
 \newenvironment{patternbox}[2]
-  {\begin{tcolorbox}[colback=violet!3,colframe=violet!50!black,
-     fonttitle=\bfseries,title={Pattern: #1}]
+  {\ifpatternbook\phantomsection\addcontentsline{toc}{section}{#1}%
+     \label{pat:\currentpattern}\def\patternboxtitle{#1}%
+   \else\def\patternboxtitle{Pattern: #1}\fi
+   \begin{tcolorbox}[colback=violet!3,colframe=violet!50!black,
+     fonttitle=\bfseries,title={\patternboxtitle}]
    {\footnotesize\textit{Over:} #2}\par\smallskip}
   {\end{tcolorbox}}
 

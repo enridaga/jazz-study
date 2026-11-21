@@ -2,14 +2,21 @@
 \usepackage{amssymb}
 \usepackage{jazzmacros}
 \tabstrue
+\patternbooktrue
 \begin{document}
 \nerdcover{Pattern book}
-\chapter*{Patterns}
-\markboth{Patterns}{Patterns}
+\tableofcontents
+\chapter*{How to use the patterns}
+\addcontentsline{toc}{chapter}{How to use the patterns}
+\markboth{How to use the patterns}{How to use the patterns}
+Patterns are grouped by harmonic context, that is by what you play them over
+(for example a major ii--V--I); within a group they are in alphabetical order.
+An alphabetical index of all the patterns is at the end of the book.
 Numbers are scale degrees of the key of the target chord. Tabs are in a
 reference key (G unless stated), in one position; transpose by moving the shape.
 
 \medskip
 \input{patterns/tabs/list}
+\input{patterns/tabs/index}
 \include{credits}
 \end{document}
