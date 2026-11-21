@@ -26,7 +26,8 @@ Contributions follow the usual open-source workflow on GitHub.
   (♭3, ♭6, ♭7). Use the macros in `jazzmacros.sty`; copy an existing tune as a template
   (see *Adding a tune* in the [README](README.md)).
 - **Sources.** Cite the sources of historical notes and recordings (`\sources`, `\src`).
-  Credit lesson notes to their session and tutor.
+  Credit ideas inspired by a lesson to the session and the tutor, but do not
+  copy course materials (handouts, notes): write your own explanation.
 - **No third-party material.** Do not commit lead sheets, handouts, scans or lyrics:
   they belong to their rights holders. Transcribe into number notation instead.
   `tunes/*/score.pdf` and `tunes/*/handout*.jpg` are ignored by git and stay on your

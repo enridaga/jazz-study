@@ -72,7 +72,10 @@ versions. The songs belong to their rights holders; the lead sheets and handouts
 
 ## Credits and use of AI
 
-Tunes, lead sheets, lesson notes and listening come from the
-[Jazzschool](https://www.jazzschool.co.uk/) courses; sources are cited in each tune.
+Nerdbook is an independent work, not affiliated with or derived from the materials of any
+school or publisher. It draws on lessons attended by the contributors (some ideas were
+inspired by [Jazzschool](https://www.jazzschool.co.uk/) lessons, credited where used),
+published lead sheets and recordings, reference works, the contributors' own knowledge
+and AI assistance. No course materials are reproduced; sources are cited in each tune.
 The book was made with the help of an AI assistant (Claude, by Anthropic), directed and
 reviewed by the contributors; it may contain errors. See `credits.tex` (the Credits chapter).
