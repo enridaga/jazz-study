@@ -46,3 +46,7 @@ patterns/tabs/
 patternbook.pdf
 songs/
 site/
+
+# Third-party lead sheets and lesson handouts: kept locally, never published
+tunes/*/score.pdf
+tunes/*/handout*.jpg

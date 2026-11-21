@@ -32,16 +32,16 @@ jobs:
       - name: Collect outputs
         run: |
           mkdir -p dist
-          cp main.pdf "dist/Jazz Study Book.pdf"
-          cp forms.pdf "dist/Jazz Study Book - Forms.pdf"
-          cp patternbook.pdf "dist/Jazz Study Book - Pattern Book.pdf"
+          cp main.pdf "dist/Nerdbook.pdf"
+          cp forms.pdf "dist/Nerdbook - Forms.pdf"
+          cp patternbook.pdf "dist/Nerdbook - Pattern Book.pdf"
           cp songs/*.pdf dist/
           cp ireal/*.html dist/
 
       - name: Upload artifact (this commit)
         uses: actions/upload-artifact@v4
         with:
-          name: jazz-study-${{ github.sha }}
+          name: nerdbook-${{ github.sha }}
           path: dist/
 
       - name: Publish release "latest" (main branch only)
