@@ -56,7 +56,8 @@ See `legend.tex` (or the Notation chapter) for all symbols.
 
 ## Licence
 
-© 2026 Enrico Daga. Licensed under
+© 2026 the Nerdbook contributors (everyone who has contributed a commit to this
+repository or is mentioned in the Credits). Licensed under
 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/): free to use for
 study and teaching and to share unmodified, with credit; no commercial use, no modified
 versions. The songs belong to their rights holders; the lead sheets and handouts in
@@ -67,4 +68,4 @@ versions. The songs belong to their rights holders; the lead sheets and handouts
 Tunes, lead sheets, lesson notes and listening come from the
 [Jazzschool](https://www.jazzschool.co.uk/) courses; sources are cited in each tune.
 The book was made with the help of an AI assistant (Claude, by Anthropic), directed and
-reviewed by the author; it may contain errors. See `credits.tex` (the Credits chapter).
+reviewed by the contributors; it may contain errors. See `credits.tex` (the Credits chapter).

@@ -140,7 +140,7 @@
 \definecolor{nbgold}{rgb}{0.80,0.58,0.20}
 \usetikzlibrary{arrows.meta}
 \newcommand{\nerdcover}[1]{%
-  \hypersetup{pdftitle={Nerdbook -- #1},pdfauthor={Enrico Daga}}%
+  \hypersetup{pdftitle={Nerdbook -- #1},pdfauthor={The Nerdbook contributors}}%
   \begin{titlepage}
   \begin{tikzpicture}[remember picture,overlay]
     \fill[nbpaper] (current page.south west) rectangle (current page.north east);
@@ -179,7 +179,7 @@
     \node[anchor=north west,text=nbviolet,font=\sffamily\Large\bfseries]
       at ([xshift=3.1cm,yshift=-22.7cm]current page.north west) {\MakeUppercase{#1}};
     \node[anchor=south west,text=black!75,font=\large]
-      at ([xshift=3.1cm,yshift=2.6cm]current page.south west) {Enrico Daga};
+      at ([xshift=3.1cm,yshift=2.6cm]current page.south west) {The Nerdbook contributors};
     \node[anchor=south west,text=black!50,font=\footnotesize]
       at ([xshift=3.1cm,yshift=2cm]current page.south west)
       {v\docversion\ \textperiodcentered\ \docdate};
@@ -192,20 +192,22 @@
   \thispagestyle{empty}\null\vfill
   {\small\raggedright
   \textbf{Nerdbook} \textperiodcentered\ A jazz study book in number notation\\
-  Copyright \copyright\ 2026 Enrico Daga \textperiodcentered\
-  \url{https://github.com/enridaga/nerdbook}\par\medskip
+  Copyright \copyright\ 2026 the Nerdbook contributors \textperiodcentered\
+  \url{https://github.com/enridaga/nerdbook}\\
+  The Nerdbook contributors are everyone who has contributed a commit to the
+  repository or is mentioned in the Credits.\par\medskip
   This work is licensed under the Creative Commons
   Attribution-NonCommercial-NoDerivatives 4.0 International licence
   (CC BY-NC-ND 4.0), \url{https://creativecommons.org/licenses/by-nc-nd/4.0/}.\par\medskip
   You are free to use it for study and teaching, and to copy and redistribute it
   in any medium or format, provided that you:
   \begin{itemize}\setlength{\itemsep}{0pt}
-  \item \textbf{credit} the work as ``Nerdbook, by Enrico Daga'', with a link to the licence;
+  \item \textbf{credit} the work as ``Nerdbook, by the Nerdbook contributors'', with a link to the licence;
   \item do not use it for \textbf{commercial} purposes;
   \item share it only \textbf{unmodified}: altered, adapted or partial versions may not be distributed.
   \end{itemize}
   The songs (melodies, harmonies and lyrics) belong to their composers, lyricists and
   publishers, and are not covered by this licence; this book contains study analyses of them.\par}\par\medskip
   {\small\raggedright Made with the help of AI (Claude, by Anthropic), directed and reviewed by
-  the author: see \emph{Credits} at the end of the book.\par}
+  the contributors: see \emph{Credits} at the end of the book.\par}
   \clearpage}

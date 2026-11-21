@@ -43,7 +43,7 @@ def credits_html():
     t = re.sub(r"\\href\{([^}]*)\}\{([^}]*)\}", r'<a href="\1">\2</a>', t)
     t = re.sub(r"\\textbf\{([^}]*)\}", r"<b>\1</b>", t)
     t = re.sub(r"\\emph\{([^}]*)\}", r"<i>\1</i>", t)
-    t = re.sub(r"\\section\*\{([^}]*)\}", r"<h3>\1</h3>", t)
+    t = re.sub(r"\\section\*\{([^}]*)\}", r"<h3>\1</h3>\n\n", t)
     t = t.replace("\\begin{itemize}", "<ul>").replace("\\end{itemize}", "</ul>")
     t = t.replace("\\item", "<li>").replace("--", "–")
     out = []
@@ -135,7 +135,7 @@ Roman numerals. Learn the shape once, play it in any key.</p>
 <div class="grid">{cards}</div>
 <h2>Credits</h2>
 <div class="credits">{credits}</div>
-<footer>Nerdbook © 2026 Enrico Daga · {version}<br>
+<footer>Nerdbook © 2026 the Nerdbook contributors · {version}<br>
 Licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>:
 free to use for study and teaching and to share unmodified, with credit; no commercial use, no modified versions.
 The songs belong to their composers, lyricists and publishers. Made with the help of AI (Claude, by Anthropic): see Credits.</footer>
